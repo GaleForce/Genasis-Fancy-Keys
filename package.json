@@ -1,0 +1,25 @@
+{
+  "name": "genasis-fancy-keys",
+  "version": "0.0.1",
+  "description": "Keycap customizer",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaleForce/Genasis-Fancy-Keys.git"
+  },
+  "author": "Marc Gale",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/GaleForce/Genasis-Fancy-Keys/issues"
+  },
+  "homepage": "https://github.com/GaleForce/Genasis-Fancy-Keys#readme"
+}

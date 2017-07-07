@@ -1,0 +1,47 @@
+html {
+  height: 100%; }
+
+.keyboard__r1 {
+  display: flex; }
+
+.keyboard__r1 .keycap {
+  margin-right: .2px; }
+
+.keyboard__r2 {
+  display: flex; }
+
+.keyboard__r3 {
+  display: flex; }
+
+.keyboard__r3 .keycap {
+  margin-right: .65px; }
+
+.keyboard__r4 {
+  margin-top: -2px;
+  display: flex; }
+
+.keyboard__bottom {
+  margin-top: -1px;
+  display: flex; }
+
+.keyboard__bottom .keycap {
+  margin-right: 2.3px; }
+
+.keyboard__r4 .keycap {
+  margin-right: .8px; }
+
+.keyboard__fn {
+  margin-bottom: 10px;
+  display: flex; }
+
+.keyboard__fn .keycap:nth-of-type(4n-3) {
+  margin-right: 35px; }
+
+.keyboard__fn .keycap:last-of-type {
+  margin-right: 0; }
+
+.debug-controls {
+  margin-top: 100px; }
+
+h2 {
+  padding-bottom: 30px; }
