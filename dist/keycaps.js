@@ -23,6 +23,9 @@ var arrowKeys = ['up', 'left', 'down', 'right'];
 // 100% Layout Keys
 var tenkeyKeys = ['num', 'tenslash', '*', 'ten-', 't7', 't8', 't9', 't4', 't5', 't6', 't1', 't2', 't3', 't0', 'decimal', '+', 'tenter'];
 
+// Modifiers
+var modifierKeys = ['tab', 'caps', 'lshift', 'bspace', 'enter', 'rshift', 'lctrl', 'lsuper', 'lalt', 'ralt', 'rsuper', 'fn', 'rctrl'];
+
 // Mapping 60% Layout
 var rowOne = document.querySelector('.keyboard__r1');
 var rowTwo = document.querySelector('.keyboard__r2');
@@ -54,15 +57,49 @@ buildRow(rowThreeKeys, rowThree);
 buildRow(rowFourKeys, rowFour);
 buildRow(rowBottomKeys, rowBottom);
 
+// Helper functions to switch between class name, key name, element
 
-// Change Keycaps by Cap or Group
-
+// String (class)
 function getKey(keyClass) {
   var foundKey = keyClass.substr(7, keyClass.length); //find better way
   return foundKey;
 }
 
+// String (key name) or Array
+function getKeyElement(keyName) {
+  if (!Array.isArray(keyName)) {
+    var keyElements = document.querySelector('.keycap-' + keyName);
+  } else {
+    var keyElements = [];
+    for (var i = 0; i < keyName.length; i++) {
+      keyElements.push(document.querySelector('.keycap-' + keyName[i]));
+    }
+  }
+  return keyElements;
+}
+
+// Object (html node)
+function getKeyClass(key) {
+  var keyClasses = key.classList;
+  return keyClasses[1];
+}
+
+// Change Keycaps by Cap or Group
+
 function changeCapColor(key, color) {
+  var key = key;
+  console.log(key);
+  if (typeof key === 'string') {
+    var targetedKey = document.querySelector('.keycap-' + key);
+    targetedKey.src = keycapDir + key + '_' + color.charAt(0) + '.png';
+  } else {
+    var keyClass = getKeyClass(key);
+    var keyName = getKey(keyClass);
+    key.src = keycapDir + keyName + '_' + color.charAt(0) + '.png';
+  }
+}
+
+function changeCapColorOld(key, color) {
   var targetedKey = document.querySelector('.keycap-' + key);
   targetedKey.src = keycapDir + key + '_' + color.charAt(0) + '.png';
 }
@@ -100,9 +137,23 @@ function toggleGroupColor(element) {
   }
 }
 
+function toggleKeysColor(keys) {
+  var keys = getKeyElement(keys);
+  for (var i = 0; i < keys.length; i++) {
+    if (keys[i].classList.contains('toggled')) {
+      changeCapColor(keys[i], 'beige');
+      keys[i].classList.remove('toggled');
+    } else {
+      changeCapColor(keys[i], 'triumph');
+      keys[i].classList.add('toggled');
+    }
+  }
+}
+
 var toggleEsc = document.querySelector('.toggle-esc');
 var toggleEnter = document.querySelector('.toggle-enter');
 var toggleFn = document.querySelector('.toggle-fn');
+var toggleMods = document.querySelector('.toggle-mods');
 
 toggleEsc.addEventListener('click', function() {
   toggleCapColor('esc')
@@ -114,4 +165,8 @@ toggleEnter.addEventListener('click', function() {
 
 toggleFn.addEventListener('click', function() {
   toggleGroupColor(rowFn);
+});
+
+toggleMods.addEventListener('click', function() {
+  toggleKeysColor(modifierKeys);
 });

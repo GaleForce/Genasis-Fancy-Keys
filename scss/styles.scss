@@ -5,62 +5,87 @@ html {
 }
 
 .keyboard {
+  &__r1,
+  &__r2,
+  &__r3,
+  &__r4,
+  &__bottom,
+  &__fn {
+    display: flex;
+  }
 
+  &__r1 {
+
+  }
+
+  &__r2 {
+
+  }
+
+  &__r3 {
+
+  }
+
+  &__r4 {
+    margin-top: -2px;
+  }
+
+  &__bottom {
+    margin-top: -1px;
+  }
+
+  &__fn {
+    margin-bottom: 10px;
+
+    .keycap {
+      &:nth-of-type(4n-3) {
+        margin-right: 35px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
-.keyboard__r1 {
-  display: flex;
-}
+.keycap {
+  .keyboard__r1 & {
+    margin-right: .2px;
+  }
 
-.keyboard__r1 .keycap {
-  margin-right: .2px;
-}
+  .keyboard__r3 & {
+    margin-right: .65px;
+  }
 
-.keyboard__r2 {
-  display: flex;
-}
+  .keyboard__r4 & {
+    margin-right: .8px;
+  }
 
-.keyboard__r3 {
-  display: flex;
-}
-
-.keyboard__r3 .keycap {
-  margin-right: .65px;
-}
-
-.keyboard__r4 {
-  margin-top: -2px;
-  display: flex;
-}
-
-.keyboard__bottom {
-  margin-top: -1px;
-  display: flex;
-}
-
-.keyboard__bottom .keycap {
-  margin-right: 2.3px;
-}
-
-.keyboard__r4 .keycap {
-  margin-right: .8px;
-}
-
-.keyboard__fn {
-  margin-bottom: 10px;
-  display: flex;
-}
-
-.keyboard__fn .keycap:nth-of-type(4n-3) {
-  margin-right: 35px;
-}
-
-.keyboard__fn .keycap:last-of-type {
-  margin-right: 0;
+  .keyboard__bottom & {
+    margin-right: 2.3px;
+  }
 }
 
 .debug-controls {
   margin-top: 100px;
+
+  &__btn {
+    display: block;
+    width: 300px;
+    height: 30px;
+    background-color: #607d8b;
+    color: #fff;
+    border: 1px solid darken(#607D8B, 30%);
+    border-radius: 3px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: darken(#607d8b, 20%);
+      cursor: pointer;
+      border: 1px solid darken(#607D8B, 50%);
+    }
+  }
 }
 
 h2 {

@@ -1,47 +1,49 @@
 html {
   height: 100%; }
 
-.keyboard__r1 {
+.keyboard__r1, .keyboard__r2, .keyboard__r3, .keyboard__r4, .keyboard__bottom, .keyboard__fn {
   display: flex; }
+
+.keyboard__r4 {
+  margin-top: -2px; }
+
+.keyboard__bottom {
+  margin-top: -1px; }
+
+.keyboard__fn {
+  margin-bottom: 10px; }
+  .keyboard__fn .keycap:nth-of-type(4n-3) {
+    margin-right: 35px; }
+  .keyboard__fn .keycap:last-of-type {
+    margin-right: 0; }
 
 .keyboard__r1 .keycap {
   margin-right: .2px; }
 
-.keyboard__r2 {
-  display: flex; }
-
-.keyboard__r3 {
-  display: flex; }
-
 .keyboard__r3 .keycap {
   margin-right: .65px; }
-
-.keyboard__r4 {
-  margin-top: -2px;
-  display: flex; }
-
-.keyboard__bottom {
-  margin-top: -1px;
-  display: flex; }
-
-.keyboard__bottom .keycap {
-  margin-right: 2.3px; }
 
 .keyboard__r4 .keycap {
   margin-right: .8px; }
 
-.keyboard__fn {
-  margin-bottom: 10px;
-  display: flex; }
-
-.keyboard__fn .keycap:nth-of-type(4n-3) {
-  margin-right: 35px; }
-
-.keyboard__fn .keycap:last-of-type {
-  margin-right: 0; }
+.keyboard__bottom .keycap {
+  margin-right: 2.3px; }
 
 .debug-controls {
   margin-top: 100px; }
+  .debug-controls__btn {
+    display: block;
+    width: 300px;
+    height: 30px;
+    background-color: #607d8b;
+    color: #fff;
+    border: 1px solid #212c31;
+    border-radius: 3px;
+    margin-bottom: 10px; }
+    .debug-controls__btn:hover {
+      background-color: #36474f;
+      cursor: pointer;
+      border: 1px solid black; }
 
 h2 {
   padding-bottom: 30px; }
